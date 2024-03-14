@@ -7,13 +7,15 @@ def unlockBoxes(boxes):
     :param box_list: List of lists representing the locked boxes.
     :return: True if all boxes can be opened, else False.
     """
-    unlocked_boxes = [False] * len(boxes)  # Initialize boxes as locked
-    unlocked_boxes[0] = True
+    if not boxes or type(boxes) is not list:
+        return False
 
-    for i in range(len(boxes)):
-        if unlocked_boxes[i]:
-            for key in boxes[i]:
-                if key < len(boxes) and not unlocked_boxes[key]:
-                    unlocked_boxes[key] = True
+    unlocked_boxes = [0]
+    for n in unlocked_boxes:
+        for key in boxes[n]:
+            if key not in unlocked_boxes and key < len(boxes):
+                unlocked_boxes.append(key)
 
-    return all(unlocked_boxes)
+    if len(unlocked_boxes) == len(boxes):
+        return True
+    return False
