@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Lockboxes"""
 
+
 def unlockBoxes(boxes):
     """
     Function to determine if all the boxes can be opened.
@@ -15,7 +16,6 @@ def unlockBoxes(boxes):
         for key in boxes[n]:
             if key not in unlocked_boxes and key < len(boxes):
                 unlocked_boxes.append(key)
-
     if len(unlocked_boxes) == len(boxes):
         return True
     return False
