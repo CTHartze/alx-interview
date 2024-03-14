@@ -46,6 +46,6 @@ Write a method that determines if all the boxes can be opened.
 *   Return True if all boxes can be opened, else return False
     
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   carrie@ubuntu:~/0x01-lockboxes$ cat main_0.py  #!/usr/bin/python3  canUnlockAll = __import__('0-lockboxes').canUnlockAll  boxes = [[1], [2], [3], [4], []]  print(canUnlockAll(boxes))  boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]  print(canUnlockAll(boxes))  boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]  print(canUnlockAll(boxes))  carrie@ubuntu:~/0x01-lockboxes$   `
+`   carrie@ubuntu:~/0x01-lockboxes$ cat main_0.py  #!/usr/bin/python3  canUnlockAll = __import__('0-lockboxes').canUnlockAll  boxes = [[1], [2], [3], [4], []]  print(canUnlockAll(boxes))  boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]  print(canUnlockAll(boxes))  boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]  print(canUnlockAll(boxes))  carrie@ubuntu:~/0x01-lockboxes$   `
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   carrie@ubuntu:~/0x01-lockboxes$ ./main_0.py  True  True  False  carrie@ubuntu:~/0x01-lockboxes$   `
+`   carrie@ubuntu:~/0x01-lockboxes$ ./main_0.py  True  True  False  carrie@ubuntu:~/0x01-lockboxes$   `
