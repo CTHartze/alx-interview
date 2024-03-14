@@ -2,20 +2,23 @@
 """Lockboxes"""
 
 
-def unlockBoxes(boxes):
+def canUnlockAll(boxes):
     """
-    Function to determine if all the boxes can be opened.
-    :param box_list: List of lists representing the locked boxes.
+    Determines if all boxes can be opened starting from (box 0).
+    
+    :param boxes: List of lists representing locked boxes.
     :return: True if all boxes can be opened, else False.
     """
-    if not boxes or type(boxes) is not list:
-        return False
+    opened = set()
 
-    unlocked_boxes = [0]
-    for n in unlocked_boxes:
-        for key in boxes[n]:
-            if key not in unlocked_boxes and key < len(boxes):
-                unlocked_boxes.append(key)
-    if len(unlocked_boxes) == len(boxes):
-        return True
-    return False
+    def search(box):
+        if box in opened:
+            return
+        opened.add(box)
+
+        for key in boxes[box]:
+            search(key)
+
+    search(0)
+
+    return len(opened) == len(boxes)
