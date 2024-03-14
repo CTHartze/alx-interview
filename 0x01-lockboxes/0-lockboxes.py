@@ -5,7 +5,7 @@
 def canUnlockAll(boxes):
     """
     Determines if all boxes can be opened starting from (box 0).
-    
+
     :param boxes: List of lists representing locked boxes.
     :return: True if all boxes can be opened, else False.
     """
