@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Solves the N queens problem"""
 
 import sys
 
@@ -45,7 +46,7 @@ def print_solution(solution):
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: {} N".format(sys.argv[0]))
+        print("Usage: nqueens N")
         sys.exit(1)
 
     try:
