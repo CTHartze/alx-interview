@@ -2,23 +2,27 @@
 
 const request = require('request');
 
-const url = 'https://swapi-api.alx-tools.com/api/';
+const filmNum = process.argv[2] + '/';
+const filmURL = 'https://swapi-api.hbtn.io/api/films/';
 
-// Makes an API request to get film info
-request(`${url}films/${process.argv[2]}`, async (error, response, body) => {
-  error && console.log(error);
+// Makes an API request to get film information
+request(filmURL + filmNum, async function (err, res, body) {
+  if (err) return console.error(err);
 
-  // Parse response body to get the list of character URLs
-  const chars = (JSON.parse(response.body).characters);
-    for (const char of chars) {
-      await new Promise((resolve, reject) => {
-        request(char, (error, response, body) => {
-          error && console.log(error);
+  // Parse the response body to get the list of character URLs
+  const charURLList = JSON.parse(body).characters;
 
-          const name = JSON.parse(response.body).name;
-          console.log(name);
-          resolve();
-        });
+  // Iterare through the character URLs and fect character information
+  // Make a request to each character URL
+  for (const charURL of charURLList) {
+    await new Promise(function (resolve, reject) {
+      request(charURL, function (err, res, body) {
+        if (err) return console.error(err);
+
+        // Parse the charcter nformation and print the character's name Resolve the promise to indicate completion
+        console.log(JSON.parse(body).name);
+        resolve();
       });
-    }
+    });
+  }
 });
