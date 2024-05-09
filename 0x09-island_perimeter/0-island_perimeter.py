@@ -3,26 +3,21 @@
 
 
 def island_perimeter(grid):
+    # A function that outputs the perimeter of an island described by grid
     perimeter = 0
-    rows, cols = len(grid), len(grid[0])
+    grid_length = len(grid)
 
-    # Helper function to check if cell is within the grid and is land
-    def is_land(i, j):
-        return 0 <= i < rows and 0 <= j < cols and grid[i][j] == 1
-
-    # Iterates through each cell in grid
-    for i in range(rows):
-        for j in range(cols):
-            if grid[i][j] == 1:  # If current cell is land
-                # Check each neighboring cell and perimeter if water or edge
-                perimeter += 4  # Assumes 4 sides initially
-                if is_land(i - 1, j):
-                    perimeter -= 1
-                if is_land(i + 1, j):
-                    perimeter -= 1
-                if is_land(i, j - 1):
-                    perimeter -= 1
-                if is_land(i, j + 1):
-                    perimeter -= 1
+    # Iterate through each cell in the grid
+    for row in range(grid_length):
+        for column in range(len(grid[row])):
+            if grid[row][column] == 1:
+                if row - 1 < 0 or grid[row - 1][column] == 0:
+                    perimeter += 1
+                if column - 1 < 0 or grid[row][column - 1] == 0:
+                    perimeter += 1
+                if column + 1 >= len(grid[row]) or grid[row][column + 1] == 0:
+                    perimeter += 1
+                if row + 1 >= grid_length or grid[row + 1][column] == 0:
+                    perimeter += 1
 
     return perimeter
