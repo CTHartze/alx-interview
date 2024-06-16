@@ -37,7 +37,7 @@ const requestNames = async () => {
   }
 };
 
-const getCharNames = aync () => {
+const getCharNames = async () => {
   await requestCharacters();
   await requestNames();
 
